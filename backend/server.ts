@@ -1,5 +1,6 @@
 import express, {Router} from 'express';
 import {GoogleGenerativeAI, ResponseSchema, SchemaType} from "@google/generative-ai";
+import cors from "cors";
 import dotenv from "dotenv";
 
 dotenv.config();
@@ -9,7 +10,6 @@ const port = process.env.PORT || 5174
 
 // Create http server
 const app = express()
-
 
 const genai = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 const topicsListSchema: ResponseSchema = {
@@ -42,6 +42,16 @@ const topicsListSchema: ResponseSchema = {
                 // },
                 nullable: true,
             },
+            // subtopics: {
+            //     type: SchemaType.ARRAY,
+            //     description: "Smaller concepts contained within this topic",
+            //     items: {
+            //         type: SchemaType.STRING,
+            //         description: "The name of a subtopic",
+            //         nullable: true,
+            //     },
+            //     nullable: true,
+            // },
         },
         required: ["id", "label", "desc"],
         description: "Name of a topic to learn",
@@ -121,6 +131,7 @@ const model = genai.getGenerativeModel({
     },
 });
 
+
 const api = Router();
 api.use("/topics", async (req, res) => {
     const field = req.query.field;
@@ -134,6 +145,7 @@ api.use("/topics", async (req, res) => {
 })
 
 
+app.use(cors());
 app.use('/api', api);
 
 // Start http server
