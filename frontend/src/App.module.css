@@ -1,6 +1,6 @@
 .conversation_input_label {
-    font-weight: var(--font_weight_bold);
-    font-size: var(--font_size_medium);
+    font-weight: var(--font_weight_medium);
+    font-size: var(--font_size_x_large);
     display: block;
     text-align: center;
     margin-top: 2em;
@@ -9,6 +9,9 @@
 
 .top_section {
     display: flex;
+    justify-content: center;
+    gap: var(--spacing_medium);
+    margin-bottom: var(--spacing_large);
 }
 
 .conversation_input {
@@ -29,12 +32,25 @@
 }
 
 .conversation_button {
+    display: inline-block;
+    
     border: none;
-    background: none;
+    background: var(--color_accent);
+    border-radius: 2em;
+    width: 50px;
+}
+.conversation_button:hover {
+    background-color: var(--color_accent_light);
 }
 .conversation_button::before {
     display: inline-block;
     margin-top: 3px;
+    margin-left: 3px;
     content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="%23e8eaed"><path d="M120-160v-640l760 320-760 320Zm80-120 474-200-474-200v140l240 60-240 60v140Zm0 0v-400 400Z"/></svg>');
+}
 
+.roadmap_canvas {
+    height: 75dvh;
+    width: 75dvw;
+    margin: 0 auto;
 }

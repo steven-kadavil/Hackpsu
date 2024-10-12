@@ -69,3 +69,32 @@ input[data-autocompleted] {
   background-color: transparent !important;
 }
 
+.std_input {
+  background-color: inherit;
+  padding: var(--spacing_small);
+  border: var(--std_border);
+  border-radius: var(--spacing_x_small);
+  text-overflow: ellipsis;
+  outline: none;
+}
+.std_input:focus {
+  border: var(--std_border_focus);
+  background-color: var(--color_primary_100);
+}
+.std_input::placeholder {
+  color: var(--color_primary_500);
+}
+
+.accent_btn {
+  font-family: Mono;
+  border-radius: var(--spacing_x_small);
+  background-color: var(--color_accent);
+  color: var(--color_primary_100);
+  border: none;
+  padding: var(--spacing_medium);
+
+  min-height: var(--btn_min_height);
+}
+.accent_btn:hover {
+  background-color: var(--color_accent_light);
+}
