@@ -4,11 +4,11 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "node server",
+    "dev": "vite-node server",
     "build": "npm run build:client && npm run build:server",
     "build:client": "vite build --ssrManifest --outDir dist/client",
     "build:server": "vite build --ssr src/entry-server.ts --outDir dist/server",
-    "preview": "cross-env NODE_ENV=production node server"
+    "preview": "cross-env NODE_ENV=production vite-node server"
   },
   "dependencies": {
     "compression": "^1.7.4",
@@ -25,6 +25,7 @@
     "svelte-check": "^3.6.9",
     "tslib": "^2.6.2",
     "typescript": "^5.4.5",
-    "vite": "^5.2.10"
+    "vite": "^5.2.10",
+    "vite-node": "^2.1.2"
   }
 }
