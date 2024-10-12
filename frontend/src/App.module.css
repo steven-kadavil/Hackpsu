@@ -1,0 +1,40 @@
+.conversation_input_label {
+    font-weight: var(--font_weight_bold);
+    font-size: var(--font_size_medium);
+    display: block;
+    text-align: center;
+    margin-top: 2em;
+    margin-bottom: var(--spacing_medium);
+}
+
+.top_section {
+    display: flex;
+}
+
+.conversation_input {
+    display: block;
+
+    outline: none;
+    padding: var(--spacing_large);
+    border-radius: var(--spacing_large);
+    border: var(--std_border);
+
+    min-width: 50dvw;
+}
+.conversation_input:focus {
+    border: var(--std_border_focus);
+}
+.conversation_input::placeholder {
+    color: var(--color_primary_500);
+}
+
+.conversation_button {
+    border: none;
+    background: none;
+}
+.conversation_button::before {
+    display: inline-block;
+    margin-top: 3px;
+    content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="%23e8eaed"><path d="M120-160v-640l760 320-760 320Zm80-120 474-200-474-200v140l240 60-240 60v140Zm0 0v-400 400Z"/></svg>');
+
+}
